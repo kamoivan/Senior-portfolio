@@ -1,0 +1,177 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 24px;
+  border-radius: 100px; /* Look "Pill" */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* LOGO */
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.logo-icon-wrapper {
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.logo-text .dot {
+  color: #3b82f6;
+}
+
+/* LINKS */
+.navbar-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  color: #fff;
+}
+.nav-item.active {
+  color: #fff;
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.nav-icon {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* ACTION BUTTON */
+.btn-contact-nav {
+  background: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.btn-contact-nav:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* MOBILE RESPONSIVE */
+.mobile-toggle {
+  color: #8b5cf6;
+  display: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .navbar-container {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 1000;
+    padding: 10px;
+  }
+
+  .navbar {
+    max-width: 1200px;
+    margin-right: 0;
+    flex-wrap: wrap;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 24px;
+    border-radius: 100px; /* Look "Pill" */
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  .desktop-only {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    background: #0f172a;
+    padding: 80px 20px;
+    z-index: -1;
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile-nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

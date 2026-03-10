@@ -1,0 +1,189 @@
+body {
+  margin-top: 0;
+}
+.about-page {
+  max-width: 1400px;
+  margin-top: 0;
+  padding: 80px 8%;
+}
+
+/* HERO */
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.about-subtitle {
+  margin-top: 5px;
+  font-size: clamp(16px, 1.3vw, 20px);
+  max-width: 720px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* STORY */
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.story-card {
+  background: #8b5cf6;
+  padding: 36px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 1s;
+}
+
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ENGINEERING */
+
+.engineering {
+  margin-bottom: 50px;
+}
+
+.bento-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.bento-card {
+  background: #0f172a;
+  color: white;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s;
+}
+
+.bento-card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+/* BUILDER */
+
+.builder {
+  margin-bottom: 30px;
+}
+
+.builder-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.builder-card {
+  background: #8b5cf6;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+}
+.builder-card p {
+  color: #1f2937;
+  font-size: 20px;
+}
+
+/* STACK */
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stack-grid div {
+  background: #111827;
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.stack-grid div:hover {
+  background: #1f2937;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .builder-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .about-page {
+    padding: 60px 20px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .builder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+}
