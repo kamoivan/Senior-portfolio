@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./Home.css";
+import "./home.css";
 import myHeroImage from "../assets/ceo_mjp.jpeg";
 import { Link } from "react-router-dom";
 import mjpLogo from "../assets/new_logo_myJobPortal.png";
