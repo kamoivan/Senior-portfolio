@@ -23,7 +23,7 @@ import {
 import "./contact.css";
 
 export default function Contact() {
-  const [state, handleSubmit] = useForm("xdkogxyz");
+  const [state, handleSubmit] = useForm("xdawavlp");
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -191,11 +191,23 @@ export default function Contact() {
                     placeholder="Full Name"
                     required
                   />
+                  <ValidationError
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
+                    className="error-msg"
+                  />
                   <input
                     type="email"
                     name="email"
                     placeholder="Email Address"
                     required
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                    className="error-msg"
                   />
                 </div>
 
@@ -204,12 +216,24 @@ export default function Contact() {
                   name="subject"
                   placeholder="Company / Project Name"
                 />
+                <ValidationError
+                  prefix="Subject"
+                  field="subject"
+                  errors={state.errors}
+                  className="error-msg"
+                />
                 <textarea
                   name="message"
                   rows="5"
                   placeholder="Describe the technical challenge..."
                   required
                 ></textarea>
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                  className="error-msg"
+                />
 
                 <button
                   type="submit"
@@ -224,7 +248,7 @@ export default function Contact() {
                 <FaCheckCircle className="big-check" />
                 <h3>Handshake Successful!</h3>
                 <p>
-                  Armand will review your brief and respond via email or call.
+                  I'll review your brief and respond via email or call soon.
                 </p>
                 <button onClick={() => window.location.reload()}>
                   New Connection
