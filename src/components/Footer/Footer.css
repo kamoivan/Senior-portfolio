@@ -47,7 +47,7 @@
 .footer-main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 5%;
+  padding: 30px 5%;
 }
 
 .footer-grid {
@@ -72,7 +72,7 @@
 
 .footer-col h4 {
   color: #fff;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.85rem;
@@ -83,7 +83,7 @@
   padding: 0;
 }
 .footer-nav li {
-  margin-bottom: 12px;
+  margin-bottom: 5px;
 }
 .footer-nav a {
   color: #94a3b8;

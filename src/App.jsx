@@ -13,6 +13,7 @@ import Home from "./views/home";
 import About from "./views/about";
 import Projects from "./views/projects";
 import Contact from "./views/contact";
+import ScrollTop from "./hooks/scrollTop";
 
 const StandardLayout = () => {
   return (
@@ -29,6 +30,7 @@ const StandardLayout = () => {
 function App() {
   return (
     <Router>
+      <ScrollTop />
       <Routes>
         <Route path="/" element={<Landing />} />
 

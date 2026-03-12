@@ -250,9 +250,6 @@ export default function Contact() {
                 <p>
                   I'll review your brief and respond via email or call soon.
                 </p>
-                <button onClick={() => window.location.reload()}>
-                  New Connection
-                </button>
               </div>
             )}
           </motion.div>
