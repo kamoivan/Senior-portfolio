@@ -18,6 +18,7 @@ function Navbar() {
   const navLinks = [
     { path: "/home", name: "Home", icon: <FaCode /> },
     { path: "/projects", name: "Projects", icon: <FaFolderOpen /> },
+    { path: "/formation-hub", name: "Formation Hub", icon: <FaTerminal /> },
     { path: "/about", name: "About", icon: <FaUserAstronaut /> },
   ];
 
@@ -28,7 +29,7 @@ function Navbar() {
         <div className="navbar-logo">
           <NavLink to="/">
             <motion.div
-              whileHover={{ rotate: -10, scale: 1.1 }}
+              whileHover={{ rotate: -15, scale: 1.1 }}
               className="logo-icon-wrapper"
             >
               iK

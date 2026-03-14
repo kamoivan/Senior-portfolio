@@ -12,6 +12,7 @@ import Landing from "./views/landing";
 import Home from "./views/home";
 import About from "./views/about";
 import Projects from "./views/projects";
+import FormationHub from "./views/formation-hub";
 import Contact from "./views/contact";
 import ScrollTop from "./hooks/scrollTop";
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/formation-hub" element={<FormationHub />} />
         </Route>
       </Routes>
     </Router>
