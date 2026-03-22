@@ -7,7 +7,11 @@ import {
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
-// Tes pages
+import FrontEndMastery from "./views/front-end-mastery";
+import BackEndMastery from "./views/back-end-mastery";
+import FullstackImmersion from "./views/fullstack-immersion";
+import DevOpsImmersion from "./views/devops-immersion";
+import MentorshipApplication from "./views/mentorship-application";
 import Landing from "./views/landing";
 import Home from "./views/home";
 import About from "./views/about";
@@ -41,6 +45,20 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/formation-hub" element={<FormationHub />} />
+          <Route
+            path="/order/front-end-mastery"
+            element={<FrontEndMastery />}
+          />
+          <Route path="/order/back-end-mastery" element={<BackEndMastery />} />
+          <Route
+            path="/order/fullstack-immersion"
+            element={<FullstackImmersion />}
+          />
+          <Route path="/order/devops-immersion" element={<DevOpsImmersion />} />
+          <Route
+            path="/mentorship-application"
+            element={<MentorshipApplication />}
+          />
         </Route>
       </Routes>
     </Router>

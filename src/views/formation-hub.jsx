@@ -42,7 +42,7 @@ const FormationHub = () => {
     {
       id: "back-end-mastery",
       category: "Backend",
-      title: "Laravel Core & Scalability",
+      title: "Laravel Core & Scalability DB",
       icon: <Server className="icon-blue" />,
       members: "850+",
       views: "3.2k+",
@@ -59,7 +59,7 @@ const FormationHub = () => {
     {
       id: "fullstack-immersion",
       category: "Fullstack",
-      title: "Software Craftsmanship 360",
+      title: "Fullstack Engineering",
       icon: <Layers className="icon-purple" />,
       members: "400+",
       views: "10k+",
@@ -139,7 +139,7 @@ const FormationHub = () => {
         <div className="section-container">
           {/* 1. Header de la section : L'accroche */}
           <header className="devops-header">
-            <div className="badge-container">
+            <div className="badge-container" style={{ color: "blue" }}>
               <Zap size={16} className="icon-zap" />
               <span className="badge-text">Advanced Engineering</span>
             </div>
@@ -180,11 +180,11 @@ const FormationHub = () => {
               <div className="devops-cta-box">
                 <div className="pricing-mini">
                   <span className="price-label">Investment</span>
-                  <span className="price-value">&nbsp;&nbsp;$1499</span>
+                  <span className="price-value">&nbsp;&nbsp;$399</span>
                 </div>
                 <br />
                 <Link to="/order/devops-immersion" className="btn-primary-glow">
-                  Apply for the Cohort <ArrowRight size={20} />
+                  Apply <ArrowRight size={20} />
                 </Link>
                 <p className="cohort-status">
                   Next cohort starts: Not scheduled yet &nbsp;•{" "}

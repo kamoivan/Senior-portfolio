@@ -1,0 +1,306 @@
+/* src/pages/mentorship-exclusive.css */
+:root {
+  --elite-bg: #000000;
+  --elite-card: rgba(15, 15, 15, 0.6);
+  --elite-border: rgba(212, 175, 55, 0.15);
+  --gold-pure: #d4af37;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --text-white: #ffffff;
+  --text-grey: #999999;
+}
+
+.mentorship-elite-wrapper {
+  background-color: var(--elite-bg);
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    #1a1500 0%,
+    transparent 50%
+  );
+  color: var(--text-white);
+  min-height: 100vh;
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 10px;
+  margin-top: 80px;
+}
+
+/* 1. NAV */
+.elite-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.elite-back-link {
+  color: var(--text-grey);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.elite-back-link:hover {
+  color: var(--gold-pure);
+}
+.elite-badge-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold-pure);
+  font-size: 0.75rem;
+  border: 1px solid var(--elite-border);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.elite-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* 2. HERO */
+.elite-hero {
+  text-align: center;
+  margin-top: 10px;
+  position: relative;
+}
+.elite-tags {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.tag-gold {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-pure);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--elite-border);
+}
+.tag-dark {
+  background: #111;
+  color: var(--text-grey);
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #333;
+}
+
+.hero-title-3d {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+.gold-text-glow {
+  background: linear-gradient(to right, #fff, var(--gold-pure));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px var(--gold-glow);
+}
+.hero-description {
+  color: var(--text-grey);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+/* Scarcity Bar */
+.scarcity-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 30px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.scarcity-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-white);
+}
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-grey);
+  letter-spacing: 1px;
+}
+
+/* 3. 3D PILLARS GRID */
+.elite-pillars-section {
+  margin-top: 100px;
+}
+.section-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+.gold-icon {
+  color: var(--gold-pure);
+}
+
+.perspective-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  perspective: 1200px; /* IMPORTANT FOR 3D EFFECT */
+}
+
+.elite-3d-card {
+  background: var(--elite-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 50px;
+  border-radius: 24px;
+  transform-style: preserve-3d; /* Allows children to float */
+  cursor: crosshair;
+}
+
+.card-highlight {
+  border: 1px solid var(--elite-border);
+  box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.08);
+}
+.card-icon-gold {
+  color: var(--gold-pure);
+  margin-bottom: 25px;
+  transform: translateZ(30px);
+}
+.elite-3d-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  transform: translateZ(20px);
+}
+.elite-3d-card p {
+  color: var(--text-grey);
+  line-height: 1.6;
+  transform: translateZ(10px);
+}
+
+/* 4. THE VAULT (Pricing) */
+.elite-checkout-vault {
+  margin-top: 120px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.vault-content {
+  background: linear-gradient(180deg, #111, #000);
+  border: 1px solid var(--gold-pure);
+  padding: 60px;
+  border-radius: 32px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 80px rgba(212, 175, 55, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.price-lockup {
+  margin-bottom: 30px;
+}
+.price-currency {
+  font-size: 2rem;
+  vertical-align: top;
+  color: var(--gold-pure);
+}
+.price-amount {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text-white);
+}
+.price-period {
+  color: var(--text-grey);
+  font-size: 1rem;
+}
+
+.vault-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px;
+  max-width: 300px;
+  text-align: left;
+}
+.vault-perks li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.btn-vault-apply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--gold-pure);
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-vault-apply:hover {
+  background: #fff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.vault-warning {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .perspective-grid {
+    grid-template-columns: 1fr;
+  }
+  .scarcity-bar {
+    flex-direction: column;
+    gap: 20px;
+    border: none;
+  }
+  .hero-title-3d {
+    font-size: 2.1rem;
+  }
+}
