@@ -184,7 +184,7 @@ const MentorshipApplication = () => {
               </li>
             </ul>
 
-            <Link to="/order/apply-for-mentorship" className="btn-vault-apply">
+            <Link to="/contact" className="btn-vault-apply">
               Request Board Review <Sparkles size={18} />
             </Link>
             <p className="vault-warning">

@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Zap,
   Laptop,
+  Repeat1Icon,
 } from "lucide-react";
 import "./fullstack-immersion.css";
 
@@ -18,7 +19,7 @@ const FullstackImmersion = () => {
     <div className="mastery-page-layout">
       {/* LEVEL 1: NAVIGATION */}
       <nav className="mastery-nav-bar">
-        <Link to="/hub" className="nav-back-link">
+        <Link to="/formation-hub" className="nav-back-link">
           <ArrowLeft size={16} /> <span>Back to Hub</span>
         </Link>
       </nav>
@@ -31,7 +32,7 @@ const FullstackImmersion = () => {
               <Crown size={12} fill="currentColor" /> Ultimate Track
             </span>
             <span className="badge-duration">
-              <Infinity size={12} /> Duration: 24 Weeks (Full Access)
+              <Repeat1Icon size={12} /> Duration: 24 Weeks (Full Access)
             </span>
           </div>
 
@@ -141,7 +142,7 @@ const FullstackImmersion = () => {
             <span className="price-current">$499</span>
             <span className="price-label">Bundle: Front + Back + Logic</span>
           </div>
-          <Link to="/order/fullstack-immersion" className="btn-order-premium">
+          <Link to="/contact" className="btn-order-premium">
             Claim Your Authority <Crown size={18} />
           </Link>
         </div>

@@ -126,7 +126,7 @@ const FrontEndMastery = () => {
             <span className="price-current">$199</span>
             <span className="price-label">Lifetime Access</span>
           </div>
-          <Link to="/order/front-end-mastery" className="btn-order-premium">
+          <Link to="/contact" className="btn-order-premium">
             Join the Track
           </Link>
         </div>

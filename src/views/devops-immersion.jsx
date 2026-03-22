@@ -131,7 +131,7 @@ const DevOpsImmersion = () => {
             <span className="price-current">$399</span>
             <span className="price-label">Lifetime Infrastructure Track</span>
           </div>
-          <Link to="/order/devops-immersion" className="btn-order-premium">
+          <Link to="/contact" className="btn-order-premium">
             Claim Your Authority <ShieldCheck size={18} />
           </Link>
         </div>

@@ -11,7 +11,6 @@ import {
   FaTwitter,
   FaPhoneAlt,
   FaCheckCircle,
-  FaRocket,
   FaCogs,
   FaProjectDiagram,
   FaBan,
@@ -135,9 +134,7 @@ export default function Contact() {
             </div>
 
             <div className="social-box">
-              <h4>
-                <FaRocket /> Connect on Socials
-              </h4>
+              <h4>Connect on Socials</h4>
               <div className="social-grid">
                 <a
                   href="https://linkedin.com/in/armand-ivan"
@@ -181,7 +178,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="premium-form">
                 <div className="form-head">
                   <FaPaperPlane className="head-icon" />
-                  <h3>Send a Project Brief</h3>
+                  <h3>Send a Project / Formation brief</h3>
                 </div>
 
                 <div className="input-row">
@@ -214,7 +211,7 @@ export default function Contact() {
                 <input
                   type="text"
                   name="subject"
-                  placeholder="Company / Project Name"
+                  placeholder="Project / Formation Name"
                 />
                 <ValidationError
                   prefix="Subject"
