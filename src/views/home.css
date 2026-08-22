@@ -113,14 +113,13 @@ body {
   justify-content: center;
   width: 100%;
 }
-.visit-link-btn {
-  background: #1c1b1b;
-  color: white;
+a.visit-link-btn {
+  color: #2c2c2c;
   text-decoration: none;
-  font-size: 15px;
-  font-weight: 200;
-  padding: 10px 20px;
-  border-radius: 30px;
+  cursor: not-allowed;
+  background-color: white;
+  border-radius: 8px;
+  padding: 6px;
 }
 .visit-link-btn:hover {
   background: white;

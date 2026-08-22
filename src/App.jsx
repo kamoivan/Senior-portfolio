@@ -16,6 +16,7 @@ import Landing from "./views/landing";
 import Home from "./views/home";
 import About from "./views/about";
 import Projects from "./views/projects";
+import LwsPartnership from "./views/lws-partnership";
 import FormationHub from "./views/formation-hub";
 import Contact from "./views/contact";
 import ScrollTop from "./hooks/scrollTop";
@@ -24,7 +25,7 @@ const StandardLayout = () => {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: "20px", minHeight: "100vh" }}>
+      <main style={{ paddingTop: "0" }}>
         <Outlet />
       </main>
       <Footer />
@@ -59,6 +60,7 @@ function App() {
             path="/mentorship-application"
             element={<MentorshipApplication />}
           />
+          <Route path="/lws-partnership" element={<LwsPartnership />} />
         </Route>
       </Routes>
     </Router>

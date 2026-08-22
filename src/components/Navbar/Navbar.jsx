@@ -9,6 +9,7 @@ import {
   FaPaperPlane,
   FaBars,
   FaTimes,
+  FaUserGraduate,
 } from "react-icons/fa";
 import "./Navbar.css";
 
@@ -20,6 +21,7 @@ function Navbar() {
     { path: "/projects", name: "Projects", icon: <FaFolderOpen /> },
     { path: "/formation-hub", name: "Formation Hub", icon: <FaTerminal /> },
     { path: "/about", name: "About", icon: <FaUserAstronaut /> },
+    { path: "/lws-partnership", name: "Partnership", icon: <FaUserGraduate /> },
   ];
 
   return (

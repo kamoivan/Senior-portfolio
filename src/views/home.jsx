@@ -247,10 +247,11 @@ const Home = () => {
             <div className="image-overlay">
               <a
                 href="https://my-job-portal.com"
-                target="_blank"
                 className="visit-link-btn"
+                aria-disabled="true"
+                target="_blank"
               >
-                Visit project ↗
+                Not Availlable Now
               </a>
             </div>
           </motion.div>

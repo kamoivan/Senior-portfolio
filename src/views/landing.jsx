@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./landing.css";
+import IkLogo from "../assets/IK_logo.png";
+import LwsLogo from "../assets/lws-logo.webp";
 
 function Landing() {
   const navigate = useNavigate();
-  // Configuration de l'animation de rotation infinie
   const rotateAnimation = {
     rotateY: [0, 360],
     transition: {
@@ -85,6 +86,27 @@ function Landing() {
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </motion.button>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="partnership-badge"
+          onClick={() => navigate("/lws-partnership")}
+        >
+          <span className="partnership-label">In partnership with</span>
+
+          <div className="partnership-logos">
+            <img src={IkLogo} alt="IK" className="partnership-logo ik-logo" />
+
+            <span className="partnership-divider">×</span>
+
+            <img
+              src={LwsLogo}
+              alt="LWS"
+              className="partnership-logo lws-logo"
+            />
+          </div>
+        </motion.div>
       </div>
     </div>
   );
