@@ -18,7 +18,7 @@ import "./lws-partnership.css";
 import IvanKamo from "../assets/ivankamo.jpeg";
 import IkLogo from "../assets/IK_logo.png";
 import LwsLogo from "../assets/lws-logo.webp";
-import Infrastructure from "../assets/infrastructures.png";
+import Infrastructure from "../assets/Infrastructures.png";
 import OStorage from "../assets/online-storage.png";
 import DomainName from "../assets/domain-name.jpg";
 import WebHosting from "../assets/web-hosting.jpg";
