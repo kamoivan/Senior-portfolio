@@ -20,6 +20,9 @@ import LwsPartnership from "./views/lws-partnership";
 import FormationHub from "./views/formation-hub";
 import Contact from "./views/contact";
 import ScrollTop from "./hooks/scrollTop";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Assessment from "./views/assessment";
 
 const StandardLayout = () => {
   return (
@@ -27,6 +30,7 @@ const StandardLayout = () => {
       <Navbar />
       <main style={{ paddingTop: "0" }}>
         <Outlet />
+        <ToastContainer position="top-right" autoClose={5000} theme="dark" />
       </main>
       <Footer />
     </>
@@ -61,6 +65,7 @@ function App() {
             element={<MentorshipApplication />}
           />
           <Route path="/lws-partnership" element={<LwsPartnership />} />
+          <Route path="/assessment" element={<Assessment />} />
         </Route>
       </Routes>
     </Router>

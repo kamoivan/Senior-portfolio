@@ -1,26 +1,40 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Code2,
-  Terminal,
   Cpu,
   Globe,
   Zap,
   Shield,
   Users,
   TrendingUp,
-  Download,
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
   Container,
   CodeXml,
-  LifeBuoy,
   Target,
+  CircleAlert,
 } from "lucide-react";
+
 import "./formation-hub.css";
 
 const FormationHub = () => {
-  // Explicit content for each track
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAssessmentPopup(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const closeAssessmentPopup = () => {
+    setShowAssessmentPopup(false);
+  };
+
   const tracks = [
     {
       id: "front-end-mastery",
@@ -39,6 +53,7 @@ const FormationHub = () => {
         "Atomic Design",
       ],
     },
+
     {
       id: "back-end-mastery",
       category: "Backend",
@@ -56,6 +71,7 @@ const FormationHub = () => {
         "Query Optimization",
       ],
     },
+
     {
       id: "fullstack-immersion",
       category: "Fullstack",
@@ -75,17 +91,27 @@ const FormationHub = () => {
     },
   ];
 
+  // ========================================
+  // RENDER
+  // ========================================
+
   return (
     <div className="formation-page">
-      {/* 1. HERO SECTION */}
+      {/* ======================================
+          1. HERO SECTION
+      ====================================== */}
+
       <section className="hub-hero">
         <div className="hero-visual"></div>
+
         <div className="hero-text-content">
           <span className="badge">Engineering Education</span>
+
           <h1>
             Forge Your <br />
             <span className="text-gradient">Technical Authority</span>
           </h1>
+
           <p className="hook">
             Stop following tutorials. Start designing systems. Deep-dive into
             advanced architectures with a CTO-led curriculum.
@@ -93,18 +119,25 @@ const FormationHub = () => {
         </div>
       </section>
 
-      {/* 2. THE TRAINING TRACKS */}
+      {/* ======================================
+          2. TRAINING TRACKS
+      ====================================== */}
+
       <section className="section-container">
         <h2 className="section-title">Specialized Tracks</h2>
+
         <div className="tracks-grid">
           {tracks.map((track) => (
             <div key={track.id} className="track-card">
               <div className="track-header">
                 <span className="track-cat">{track.category}</span>
+
                 <div className="track-stats">
                   <span>
-                    <Users size={14} /> {track.members}
+                    <Users size={14} />
+                    {track.members}
                   </span>
+
                   <span>👁️ {track.views}</span>
                 </div>
               </div>
@@ -112,9 +145,11 @@ const FormationHub = () => {
               <h3>{track.title}</h3>
 
               <ul className="track-curriculum">
-                {track.curriculum.slice(0, 3).map((item, idx) => (
-                  <li key={idx}>
-                    <CheckCircle2 size={14} /> {item}
+                {track.curriculum.slice(0, 3).map((item, index) => (
+                  <li key={index}>
+                    <CheckCircle2 size={14} />
+
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -122,11 +157,13 @@ const FormationHub = () => {
               <div className="track-footer">
                 <div className="price-block">
                   <span className="price-label">Price</span>
-                  <span className="price-value">&nbsp;${track.price}</span>
+
+                  <span className="price-value">${track.price}</span>
                 </div>
-                <br />
+
                 <Link to={`/order/${track.id}`} className="btn-buy">
-                  Order Now <ArrowRight size={18} />
+                  Order Now
+                  <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
@@ -134,16 +171,21 @@ const FormationHub = () => {
         </div>
       </section>
 
-      {/* 3. DEVOPS IMMERSION (The "Big One") */}
+      {/* ======================================
+          3. DEVOPS IMMERSION
+      ====================================== */}
+
       <section className="devops-immersion-section">
         <div className="section-container">
-          {/* 1. Header de la section : L'accroche */}
           <header className="devops-header">
             <div className="badge-container" style={{ color: "blue" }}>
               <Zap size={16} className="icon-zap" />
+
               <span className="badge-text">Advanced Engineering</span>
             </div>
+
             <h2>The Infrastructure Engine</h2>
+
             <p className="lead-paragraph">
               Writing code is 50% of the battle. The other 50% is ensuring it
               scales, survives, and performs. Move beyond localhost and master
@@ -152,12 +194,15 @@ const FormationHub = () => {
           </header>
 
           <div className="devops-main-grid">
-            {/* 2. Côté Gauche : Expertise & Features */}
+            {/* LEFT */}
+
             <div className="devops-info">
               <div className="feature-item">
                 <Container className="feature-icon" size={24} />
+
                 <div>
                   <h4>Docker Mastery & Orchestration</h4>
+
                   <p>
                     Go beyond "it works on my machine". Build production-ready
                     images and manage multi-container ecosystems.
@@ -167,8 +212,10 @@ const FormationHub = () => {
 
               <div className="feature-item">
                 <Shield className="feature-icon" size={24} />
+
                 <div>
                   <h4>CI/CD Pipelines & Security</h4>
+
                   <p>
                     Automate your deployment with GitHub Actions. Implement
                     zero-downtime strategies and SSL/TLS hardening.
@@ -176,24 +223,27 @@ const FormationHub = () => {
                 </div>
               </div>
 
-              {/* 3. CTA : Le Bouton de commande */}
               <div className="devops-cta-box">
                 <div className="pricing-mini">
                   <span className="price-label">Investment</span>
-                  <span className="price-value">&nbsp;&nbsp;$399</span>
+
+                  <span className="price-value">$399</span>
                 </div>
-                <br />
+
                 <Link to="/order/devops-immersion" className="btn-primary-glow">
-                  Apply <ArrowRight size={20} />
+                  Apply
+                  <ArrowRight size={20} />
                 </Link>
+
                 <p className="cohort-status">
-                  Next cohort starts: Not scheduled yet &nbsp;•{" "}
+                  Next cohort starts: Not scheduled yet&nbsp;•
                   <strong>No seats available for now, checks frequently</strong>
                 </p>
               </div>
             </div>
 
-            {/* 4. Côté Droit : Le Visuel Technique (Docker Visual) */}
+            {/* RIGHT */}
+
             <div className="devops-visual-terminal">
               <div className="terminal-window">
                 <div className="terminal-topbar">
@@ -202,16 +252,19 @@ const FormationHub = () => {
                     <span className="dot yellow"></span>
                     <span className="dot green"></span>
                   </div>
+
                   <span className="terminal-filename">
                     production.docker-compose.yml
                   </span>
                 </div>
+
                 <div className="terminal-content">
                   <pre>
                     <code>
                       <span className="c-blue">services:</span>
                       <br />
-                      &nbsp;&nbsp;<span className="c-green">api_gateway:</span>
+                      &nbsp;&nbsp;
+                      <span className="c-green">api_gateway:</span>
                       <br />
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="c-blue">image:</span> nginx:alpine
@@ -225,14 +278,17 @@ const FormationHub = () => {
                       <br />
                       <span className="c-blue">networks:</span>
                       <br />
-                      &nbsp;&nbsp;<span className="c-green">backend_mesh:</span>
+                      &nbsp;&nbsp;
+                      <span className="c-green">backend_mesh:</span>
                       <br />
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="c-blue">driver:</span> bridge
                     </code>
                   </pre>
+
                   <div className="terminal-status-bar">
                     <span className="status-indicator pulse"></span>
+
                     <span className="status-text">
                       Containers Healthy: 12/12
                     </span>
@@ -243,22 +299,31 @@ const FormationHub = () => {
           </div>
         </div>
       </section>
-      {/* 4. MENTORING */}
+
+      {/* ======================================
+          4. MENTORING
+      ====================================== */}
+
       <section className="cto-mentorship-area">
         <div className="section-container">
           <div className="mentorship-grid">
-            {/* LEFT: THE PITCH (Copywriting High-Level) */}
+            {/* LEFT */}
+
             <div className="mentorship-content">
               <div className="status-pill">
-                <Zap size={14} /> <span>LIMITED TO 5 PROJECTS</span>
+                <Zap size={14} />
+
+                <span>LIMITED TO 5 PROJECTS</span>
               </div>
+
               <h2 className="title-spicy">
-                Your Private <br />{" "}
+                Your Private <br />
                 <span className="text-gradient">Technical Authority.</span>
               </h2>
+
               <p className="lead-text">
                 I don't just teach code; I architect success. From{" "}
-                <strong>Infrastructure Scaling</strong> to
+                <strong>Infrastructure Scaling</strong> to{" "}
                 <strong>Product-Market Fit</strong>, I act as your Fractional
                 CTO to ensure your startup doesn't just ship, but dominates.
               </p>
@@ -266,20 +331,25 @@ const FormationHub = () => {
               <div className="perks-list">
                 <div className="perk">
                   <Target size={20} className="text-accent" />
+
                   <p>
                     <strong>Strategic Oversight:</strong> No more tech debt. We
                     build for 100k users from Day 1.
                   </p>
                 </div>
+
                 <div className="perk">
                   <CodeXml size={20} className="text-accent" />
+
                   <p>
                     <strong>Code Craftsmanship:</strong> Peer reviews that turn
                     juniors into Senior Architects.
                   </p>
                 </div>
+
                 <div className="perk">
                   <TrendingUp size={20} className="text-accent" />
+
                   <p>
                     <strong>Business Growth:</strong> Aligning your stack with
                     your revenue goals.
@@ -287,25 +357,29 @@ const FormationHub = () => {
                 </div>
               </div>
 
-              {/* LE LIEN VERS LA PAGE DÉDIÉE */}
               <Link to="/mentorship-application" className="btn-mentorship-cta">
-                Apply for Mentorship <ArrowUpRight size={20} />
+                Apply for Mentorship
+                <ArrowUpRight size={20} />
               </Link>
             </div>
 
-            {/* RIGHT: THE "SUCCESS MONITOR" (Visual Dashboard) */}
+            {/* RIGHT */}
+
             <div className="success-monitor">
               <div className="monitor-card glass-morphism">
                 <div className="monitor-header">
                   <span className="label">MENTEE REVENUE GROWTH</span>
+
                   <span className="growth-tag">+60%</span>
                 </div>
+
                 <div className="visual-chart">
-                  {/* Ici on imagine un mini graphique ou une barre de progression */}
                   <div className="bar-container">
-                    <div className="bar" style={{ height: "40%" }}></div>
-                    <div className="bar" style={{ height: "65%" }}></div>
-                    <div className="bar active" style={{ height: "90%" }}></div>
+                    <div className="bar" style={{ height: "40%" }} />
+
+                    <div className="bar" style={{ height: "65%" }} />
+
+                    <div className="bar active" style={{ height: "90%" }} />
                   </div>
                 </div>
               </div>
@@ -313,13 +387,15 @@ const FormationHub = () => {
               <div className="live-hotline-card">
                 <div className="hotline-top">
                   <div className="pulse-red"></div>
-                  <br />
+
                   <span>CTO EMERGENCY HOTLINE</span>
                 </div>
+
                 <div className="chat-bubble">
                   <p className="msg-student">
                     "Hi SAM, the load balancer is failing under heavy traffic!"
                   </p>
+
                   <p className="msg-ivan">
                     "Scale the clusters and check the Nginx upstream. I'm
                     jumping in the shell now."
@@ -331,37 +407,132 @@ const FormationHub = () => {
         </div>
       </section>
 
-      {/* 5. THE LAB (Free Resources) */}
-      <section className="lab-section">
-        <h2 className="section-title">The Lab</h2>
-        <div className="lab-list">
-          <div className="lab-item">
-            <div className="lab-info">
-              <h4>System Design Checklist</h4>
-              <p>PDF Guide • 1,200 Downloads</p>
-            </div>
-            <button className="btn-download">
-              <Download />
+      {showAssessmentPopup && (
+        <motion.div
+          className="assessment-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeAssessmentPopup}
+        >
+          <motion.div
+            className="assessment-popup"
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.96,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.4,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            onClick={(event) => {
+              event.stopPropagation();
+            }}
+          >
+            {/* CLOSE */}
+
+            <button
+              type="button"
+              className="assessment-close"
+              onClick={closeAssessmentPopup}
+              aria-label="Close assessment popup"
+            >
+              ×
             </button>
-          </div>
-          <div className="lab-item">
-            <div className="lab-info">
-              <h4>React Perf Profiling Template</h4>
-              <p>Notion Page • 850 Downloads</p>
+
+            {/* EYEBROW */}
+
+            <div className="assessment-eyebrow">
+              <CircleAlert size={20} />
+
+              <span>BEFORE CONTINUOUS !</span>
             </div>
-            <button className="btn-download">
-              <Download />
+
+            {/* CONTENT */}
+
+            <div className="assessment-content">
+              <h2>
+                KNOW WHERE
+                <br />
+                YOU STAND.
+              </h2>
+
+              <h3>KNOW WHAT TO LEARN NEXT.</h3>
+
+              <p>Not sure which training is right for you?</p>
+
+              <p className="assessment-description">
+                Take a 30–45 min technical assessment to evaluate your current
+                level in Web Development.
+              </p>
+            </div>
+
+            {/* LEVELS */}
+
+            <div className="assessment-levels">
+              <span>BEGINNER</span>
+
+              <i></i>
+
+              <span>INTERMEDIATE</span>
+
+              <i></i>
+
+              <span>ADVANCED</span>
+            </div>
+
+            {/* PRICE */}
+
+            <div className="assessment-price">
+              <span>$10</span>
+
+              <small>TECHNICAL ASSESSMENT</small>
+            </div>
+
+            {/* PRIMARY CTA */}
+
+            <Link
+              to="/assessment"
+              className="assessment-cta"
+              onClick={() => {
+                localStorage.setItem("assessment_popup_seen", "true");
+
+                setShowAssessmentPopup(false);
+              }}
+            >
+              <span>Assess my level</span>
+
+              <ArrowRight size={18} />
+            </Link>
+
+            {/* SECONDARY ACTION */}
+
+            <button
+              type="button"
+              className="assessment-secondary"
+              onClick={closeAssessmentPopup}
+            >
+              <span>Already assessed?</span>
+
+              <span>Continue to the training tracks</span>
             </button>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };
 
-// Helper for Lucide (to be imported if used outside)
 const LayoutTemplate = ({ className }) => <Code2 className={className} />;
+
 const Server = ({ className }) => <Cpu className={className} />;
+
 const Layers = ({ className }) => <Globe className={className} />;
 
 export default FormationHub;
