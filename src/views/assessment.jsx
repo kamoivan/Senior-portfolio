@@ -426,9 +426,9 @@ const Assessment = () => {
                           }`}
                           onClick={() => selectPaymentMethod("orange-money")}
                         >
-                          <span className="payment-logo">OM</span>
+                          <span className="payment-logo orange">OM</span>
 
-                          <span className="payment-method-name">
+                          <span className="payment-method-name orange">
                             Orange Money
                           </span>
 
@@ -446,9 +446,11 @@ const Assessment = () => {
                           }`}
                           onClick={() => selectPaymentMethod("mtn-momo")}
                         >
-                          <span className="payment-logo">MoMo</span>
+                          <span className="payment-logo mtn">MoMo</span>
 
-                          <span className="payment-method-name">MTN MoMo</span>
+                          <span className="payment-method-name mtn">
+                            MTN MoMo
+                          </span>
 
                           {paymentMethod === "mtn-momo" && <Check size={17} />}
                         </button>
@@ -488,7 +490,7 @@ const Assessment = () => {
                             </div>
 
                             <p>
-                              Send <strong>$10 - 5600 XAF</strong> to:
+                              Send <strong>$10 - 5600 xaf</strong> to:
                             </p>
 
                             <div className="payment-account">

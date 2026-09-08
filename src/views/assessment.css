@@ -640,11 +640,28 @@
   font-weight: 800;
 }
 
+.payment-logo.mtn {
+  background: #fcd34d;
+  color: #111111;
+}
+
+.payment-logo.orange {
+  background: #f97316;
+  color: #ffffff;
+}
+
 .payment-method-name {
   flex: 1;
 
   font-size: 11px;
   font-weight: 700;
+}
+.payment-method-name.mtn {
+  color: #fcd34d;
+}
+
+.payment-method-name.orange {
+  color: #f97316;
 }
 
 .payment-method svg {
@@ -927,7 +944,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 670px) {
   .assessment-hero {
     min-height: 490px;
   }
@@ -998,8 +1015,8 @@
   }
 
   .assessment-form-modal {
-    width: 100%;
-    max-height: 94vh;
+    width: 90%;
+    max-height: 90vh;
 
     padding: 25px 20px;
 
