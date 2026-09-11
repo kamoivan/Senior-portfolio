@@ -93,12 +93,13 @@ export default function ProjectChoiceModal({ onClose }) {
 
           <div className="choice-modal-footer-actions">
             <a
-              href="/documents/onboarding-ivan-kamo.pdf"
+              href="/documents/Ivan_Kamo_Onboarding_fr.pdf"
               download
               className="choice-modal-secondary-btn"
             >
               <Download size={17} />
               Download the guide
+              <span className="choice-modal-footer-note">(free)</span>
             </a>
 
             <a href="/contact" className="choice-modal-primary-btn">
