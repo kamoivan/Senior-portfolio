@@ -23,6 +23,8 @@ import {
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { DiTerminal } from "react-icons/di";
+import { useEffect, useState } from "react";
+import ProjectChoiceModal from "../components/Modals/ProjectChoiceModal";
 
 const Home = () => {
   const fadeUp = {
@@ -50,6 +52,16 @@ const Home = () => {
       repeatType: "loop",
     },
   };
+
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWelcomeModal(true);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="home">
@@ -316,6 +328,9 @@ const Home = () => {
           </Link>
         </motion.div>
       </section>
+      {showWelcomeModal && (
+        <ProjectChoiceModal onClose={() => setShowWelcomeModal(false)} />
+      )}
     </main>
   );
 };
